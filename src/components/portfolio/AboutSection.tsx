@@ -1,36 +1,40 @@
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Code, Zap, Users, Award } from 'lucide-react';
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Code, Zap, Users, Award } from "lucide-react";
 
 const AboutSection = () => {
   const highlights = [
     {
       icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable, and efficient code following best practices.',
+      title: "Clean Code",
+      description:
+        "Writing maintainable, scalable, and efficient code following best practices.",
     },
     {
       icon: Zap,
-      title: 'Performance',
-      description: 'Optimizing applications for speed, achieving 30-40% faster load times.',
+      title: "Performance",
+      description:
+        "Optimizing applications for speed, achieving 30-40% faster load times.",
     },
     {
       icon: Users,
-      title: 'Collaboration',
-      description: 'Excellent team player with experience in Agile/Scrum environments.',
+      title: "Collaboration",
+      description:
+        "Excellent team player with experience in Agile/Scrum environments.",
     },
     {
       icon: Award,
-      title: 'Quality',
-      description: 'Delivering pixel-perfect, responsive designs that exceed expectations.',
+      title: "Quality",
+      description:
+        "Delivering pixel-perfect, responsive designs that exceed expectations.",
     },
   ];
 
   const certifications = [
-    'Full Stack Java Developer (2022)',
-    'Advanced Diploma in Computer Applications (ADCA)',
-    'B.Tech in Computer Science Engineering',
+    "Full Stack Java Developer (2022)",
+    "Advanced Diploma in Computer Applications (ADCA)",
+    "B.Tech in Computer Science Engineering",
   ];
 
   return (
@@ -42,7 +46,8 @@ const AboutSection = () => {
             About <span className="hero-text-gradient">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate Front-End Developer with expertise in creating exceptional user experiences
+            Passionate Front-End Developer with expertise in creating
+            exceptional user experiences
           </p>
         </div>
 
@@ -51,24 +56,45 @@ const AboutSection = () => {
           <div className="animate-slide-right">
             <Card className="card-elegant p-8">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Professional Summary</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">
+                  Professional Summary
+                </h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    I'm a dedicated <strong className="text-primary">Front-End Developer</strong> with over{' '}
-                    <strong className="text-primary">2.6 years of experience</strong> building scalable, 
-                    responsive web and mobile applications using React.js, JavaScript, HTML5, and CSS3.
+                    I'm a dedicated{" "}
+                    <strong className="text-primary">
+                      Front-End Developer
+                    </strong>{" "}
+                    with over{" "}
+                    <strong className="text-primary">
+                      3+ years of experience
+                    </strong>{" "}
+                    building scalable, responsive web and mobile applications
+                    using React.js, JavaScript, HTML5, and CSS3.
                   </p>
                   <p>
-                    My expertise lies in creating reusable components, enhancing user experience, and 
-                    optimizing UI performance. I've successfully improved load times and responsiveness 
-                    across multiple projects, contributing to{' '}
-                    <strong className="text-accent">30–40% faster page performance</strong>.
+                    My expertise lies in creating reusable components, improving
+                    user experience, and optimizing UI performance. I have
+                    consistently delivered projects with{" "}
+                    <strong className="text-accent">
+                      30–40% faster load times
+                    </strong>
+                    , making applications more efficient and user-friendly.
                   </p>
                   <p>
-                    I excel at cross-functional collaboration, API integration, and version control 
-                    via Git/GitHub. With a strong background in UI/UX best practices, I'm comfortable 
-                    working in Agile/Scrum environments and committed to delivering clean, maintainable 
-                    code that aligns with business goals.
+                    Beyond development, I am passionate about turning ideas into
+                    real projects. I’m exploring opportunities in AI-driven
+                    solutions and small-scale ventures, and I enjoy
+                    collaborating with like-minded individuals to build
+                    innovative products that solve real-world problems.
+                  </p>
+                  <p>
+                    I excel at cross-functional collaboration, API integration,
+                    and version control via Git/GitHub. With a strong
+                    understanding of UI/UX best practices, I thrive in
+                    Agile/Scrum environments and am committed to delivering
+                    clean, maintainable code that aligns with both technical and
+                    business goals.
                   </p>
                 </div>
 
@@ -77,7 +103,7 @@ const AboutSection = () => {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <p className="font-semibold text-foreground">Location</p>
-                      <p className="text-muted-foreground">Noida, India</p>
+                      <p className="text-muted-foreground">Mumbai, India</p>
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">Phone</p>
@@ -91,7 +117,9 @@ const AboutSection = () => {
             {/* Certifications */}
             <Card className="card-elegant p-6 mt-6">
               <CardContent className="p-0">
-                <h4 className="text-lg font-bold text-foreground mb-4">Certifications & Education</h4>
+                <h4 className="text-lg font-bold text-foreground mb-4">
+                  Certifications & Education
+                </h4>
                 <div className="space-y-2">
                   {certifications.map((cert, index) => (
                     <Badge
@@ -109,13 +137,12 @@ const AboutSection = () => {
 
           {/* Key Highlights */}
           <div className="animate-fade-up">
-            <h3 className="text-2xl font-bold text-foreground mb-8">What I Bring</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-8">
+              What I Bring
+            </h3>
             <div className="grid gap-6">
               {highlights.map((highlight, index) => (
-                <Card
-                  key={index}
-                  className="card-elegant card-hover p-6 group"
-                >
+                <Card key={index} className="card-elegant card-hover p-6 group">
                   <CardContent className="p-0">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
@@ -140,9 +167,10 @@ const AboutSection = () => {
               <CardContent className="p-0">
                 <h4 className="text-lg font-bold mb-2">💡 Fun Fact</h4>
                 <p>
-                  When I'm not coding, you can find me exploring new technologies, 
-                  contributing to open-source projects, or designing user interfaces 
-                  that make people's lives easier and more enjoyable!
+                  When I'm not coding, you can find me exploring new
+                  technologies, contributing to open-source projects, or
+                  designing user interfaces that make people's lives easier and
+                  more enjoyable!
                 </p>
               </CardContent>
             </Card>

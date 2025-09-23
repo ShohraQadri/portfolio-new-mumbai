@@ -1,38 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useState, useEffect } from "react";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
   ];
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.id);
+      const sections = navItems.map((item) => item.id);
       const scrollPosition = window.scrollY + 100;
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(sectionId);
             break;
           }
@@ -40,8 +43,8 @@ const Navigation = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -64,8 +67,8 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     activeSection === item.id
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                   }`}
                 >
                   {item.label}
@@ -83,7 +86,7 @@ const Navigation = () => {
               className="hover:text-primary"
             >
               <a
-                href="https://github.com/shohraqadr"
+                href="https://github.com/ShohraQadri"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
@@ -112,10 +115,7 @@ const Navigation = () => {
               asChild
               className="hover:text-primary"
             >
-              <a
-                href="mailto:qadrishohra@gmail.com"
-                aria-label="Email Contact"
-              >
+              <a href="mailto:qadrishohra@gmail.com" aria-label="Email Contact">
                 <Mail className="h-5 w-5" />
               </a>
             </Button>
@@ -148,14 +148,14 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 ${
                     activeSection === item.id
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
-              
+
               {/* Mobile Social Links */}
               <div className="flex items-center justify-center space-x-4 pt-4 border-t border-border">
                 <Button
@@ -165,7 +165,7 @@ const Navigation = () => {
                   className="hover:text-primary"
                 >
                   <a
-                    href="https://github.com/shohraqadr"
+                    href="https://github.com/ShohraQadri"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub Profile"

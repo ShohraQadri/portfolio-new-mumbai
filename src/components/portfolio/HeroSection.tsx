@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { ChevronDown, Download, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import techBg from '@/assets/tech-bg.jpg';
-import portrait from '@/assets/shohra-portrait.jpg';
+import React, { useEffect, useState } from "react";
+import { ChevronDown, Download, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import techBg from "@/assets/tech-bg.jpg";
+import portrait from "@/assets/shohra.jpg";
 
 const HeroSection = () => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = 'Front-End Developer';
+  const fullText = "Front-End Developer";
 
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timer = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + fullText[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, 100);
       return () => clearTimeout(timer);
     }
   }, [currentIndex, fullText]);
 
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -32,16 +32,22 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--surface)) 50%, hsl(var(--background)) 100%), url(${techBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundBlendMode: 'overlay',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundBlendMode: "overlay",
       }}
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-accent-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 w-48 h-48 bg-accent-secondary/10 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "4s" }}
+        ></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -64,9 +70,9 @@ const HeroSection = () => {
             <div className="mb-8 space-y-2 text-lg text-muted-foreground">
               <p className="flex items-center justify-center lg:justify-start gap-2">
                 <MapPin className="h-5 w-5 text-primary" />
-                Noida, India
+                Mumbai, India
               </p>
-              <p>2.6+ Years of Experience</p>
+              <p>3+ Years of Experience</p>
               <p>Specialized in React.js & Modern Web Development</p>
             </div>
 
@@ -82,7 +88,11 @@ const HeroSection = () => {
                 className="btn-outline-gradient px-8 py-6 text-lg font-semibold rounded-xl hover:scale-105 transition-transform duration-200"
                 asChild
               >
-                <a href="#contact" className="flex items-center gap-2">
+                <a
+                  className="flex items-center gap-2"
+                  href="/resume/Qadri_Resume.pdf"
+                  download="Qadri_Resume.pdf"
+                >
                   <Download className="h-5 w-5" />
                   Download CV
                 </a>
@@ -92,12 +102,16 @@ const HeroSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border/50">
               <div className="text-center">
-                <div className="text-3xl font-bold hero-text-gradient">2.6+</div>
-                <p className="text-sm text-muted-foreground">Years Experience</p>
+                <div className="text-3xl font-bold hero-text-gradient">3+</div>
+                <p className="text-sm text-muted-foreground">
+                  Years Experience
+                </p>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold hero-text-gradient">10+</div>
-                <p className="text-sm text-muted-foreground">Projects Completed</p>
+                <p className="text-sm text-muted-foreground">
+                  Projects Completed
+                </p>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold hero-text-gradient">5+</div>
@@ -118,15 +132,21 @@ const HeroSection = () => {
                 />
               </div>
             </div>
-            
+
             {/* Floating Tech Icons */}
             <div className="absolute top-0 right-0 w-16 h-16 bg-card rounded-xl shadow-medium flex items-center justify-center animate-float">
               <span className="text-2xl">⚛️</span>
             </div>
-            <div className="absolute bottom-10 left-0 w-16 h-16 bg-card rounded-xl shadow-medium flex items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
+            <div
+              className="absolute bottom-10 left-0 w-16 h-16 bg-card rounded-xl shadow-medium flex items-center justify-center animate-float"
+              style={{ animationDelay: "1s" }}
+            >
               <span className="text-2xl">💻</span>
             </div>
-            <div className="absolute top-1/2 -right-4 w-16 h-16 bg-card rounded-xl shadow-medium flex items-center justify-center animate-float" style={{ animationDelay: '2s' }}>
+            <div
+              className="absolute top-1/2 -right-4 w-16 h-16 bg-card rounded-xl shadow-medium flex items-center justify-center animate-float"
+              style={{ animationDelay: "2s" }}
+            >
               <span className="text-2xl">🚀</span>
             </div>
           </div>
