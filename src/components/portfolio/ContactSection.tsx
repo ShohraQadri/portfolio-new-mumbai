@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
+
 import {
   Mail,
   Phone,
@@ -19,7 +21,6 @@ import {
 } from "lucide-react";
 
 const ContactSection = () => {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -40,20 +41,29 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     emailjs
       .send(
-        "service_onip9f4",
-        "template_eh9cs45",
+        "service_8og5hpj",
+        "template_osyy5ny",
         formData,
         "wVCXo-HLPxMNAhaf5"
       )
       .then(
         (result) => {
           console.log("Message sent", result.text);
+
+          toast.success("Your message has been sent successfully!");
+
+          // reset form
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          setIsSubmitting(false);
         },
         (error) => {
-          console.log("Error", error.text);
+          console.error("Error", error.text);
+          toast.error("Failed to send message. Please try again.");
+          setIsSubmitting(false);
         }
       );
   };
@@ -378,6 +388,7 @@ const ContactSection = () => {
             © 2025 Shohra Qadri. Built with React.js, TypeScript & Tailwind CSS
           </p>
         </div>
+        <Toaster position="top-right" reverseOrder={false} />
       </div>
     </section>
   );
