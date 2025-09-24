@@ -56,7 +56,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-left animate-fade-up">
             <div className="mb-6">
               <p className="text-lg text-muted-foreground mb-2">Hello, I'm</p>
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4">
+              <h1 className="text-5xl md:text-7xl font-bold hero-text-gradient mb-4">
                 Shohra
                 <span className="hero-text-gradient block">Qadri</span>
               </h1>

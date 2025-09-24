@@ -40,7 +40,7 @@ const ExperienceSection = () => {
     {
       title: "Front-End Developer",
       company: "Times Internet",
-      location: "Mumbai",
+      location: "Noida",
       duration: "June 2024 – March 2025",
       type: "past",
       achievements: [
